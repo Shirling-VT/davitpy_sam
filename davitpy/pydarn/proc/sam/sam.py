@@ -15,11 +15,11 @@
 
 import numpy as np
 import datetime as dt
-from pydarn.proc.sam.cs10 import *
-from pydarn.proc.sam.basis import *
+from davitpy.pydarn.proc.sam.cs10 import *
+from davitpy.pydarn.proc.sam.basis import *
 
-from pydarn.sdio.sdDataTypes import sdDataPtr,gridData
-from pydarn.sdio.sdDataRead  import *    
+from davitpy.pydarn.sdio.sdDataTypes import sdDataPtr,gridData
+from davitpy.pydarn.sdio.sdDataRead  import *    
 import gme.ind, utils.timeUtils, models.aacgm
 
 import matplotlib.pyplot as plt
