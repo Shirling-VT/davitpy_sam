@@ -267,8 +267,8 @@ def calcSam(sTime,eTime,deltaT,hemi='north',fileType='grdex',src=None,fileName=N
         if nn == 0: print verr
 
         # Get into MLT coords
-        epoch = utils.timeUtils.datetimeToEpoch(sTime+dt.timedelta(minutes=deltaT/2.))
-        mltDef = models.aacgm.mltFromEpoch(epoch,0.0) * 15. 
+        epoch = davitpy.utils.timeUtils.datetimeToEpoch(sTime+dt.timedelta(minutes=deltaT/2.))
+        mltDef = davitpy.models.aacgm.mltFromEpoch(epoch,0.0) * 15. 
         # mltDef is the rotation that needs to be applied, and lon is the AACGM longitude.
         # use modulo so new longitude is between 0 & 360
         mlt_lon = np.mod((lon + mltDef), 360.)
@@ -374,14 +374,14 @@ def get_conds(sTime,eTime,deltaT,IMFave=0,IMFdelay=0,path=None):
     """Internal function to get IMF, solar wind, & dipole tilt conditions for desired times
     """
 
-    from models import tsyganenko as ts
+    from davitpy.models import tsyganenko as ts
 
     # Offset time to allow for backward averaging & delay 
     sTimeIMF = sTime-dt.timedelta(minutes=IMFdelay)-dt.timedelta(minutes=(IMFave-1))
     eTimeIMF = eTime-dt.timedelta(minutes=IMFdelay)
 
     # Get 1-min resolution OMNI data
-    omniList = gme.ind.readOmni(sTimeIMF,eTimeIMF,res=1)
+    omniList = davitpy.gme.ind.readOmni(sTimeIMF,eTimeIMF,res=1)
 
     if omniList != None:
         by_in  =  np.asarray([omniI.bym for omniI in omniList],dtype=np.float64)
