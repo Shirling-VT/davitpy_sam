@@ -20,7 +20,7 @@ from davitpy.pydarn.proc.sam.basis import *
 
 from davitpy.pydarn.sdio.sdDataTypes import sdDataPtr,gridData
 from davitpy.pydarn.sdio.sdDataRead  import *    
-import gme.ind, utils.timeUtils, models.aacgm
+import davitpy.gme.ind, davitpy.utils.timeUtils, davitpy.models.aacgm
 
 import matplotlib.pyplot as plt
 
