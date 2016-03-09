@@ -88,6 +88,16 @@ data_files = []
 for f in os.listdir('tables/aacgm'):
     data_files.append(('tables/aacgm',
                        [os.path.join('tables/aacgm', f)]))
+#############################################################################
+# And a list of all the SAM tables by Xueling Shi March 9,2016
+#############################################################################
+for f in os.listdir('tables/amie'):
+    data_files.append(('tables/amie',
+                       [os.path.join('tables/amie', f)]))
+
+for f in os.listdir('tables/model'):
+    data_files.append(('tables/model',
+                       [os.path.join('tables/model', f)]))
 
 #############################################################################
 # Include the davitpyrc file

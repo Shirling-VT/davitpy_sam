@@ -36,7 +36,7 @@ class AMIEqset():
 
         if path == None:
             from davitpy import rcParams
-	    path = "{:s}/amie/".format(rcParams['SAM_DAVITPY_TABLES_PATH'])  #Modified by Xueling Mar. 9 2016
+	    path = "{:s}/tables/amie/".format(rcParams['DAVITPY_PATH'])  #Modified by Xueling Mar. 9 2016
             #path = os.environ['DAVITPY'] + '/tables/amie/'
 
         fname1 = path + 'qset16ascii24424bf_1.dat'
@@ -104,7 +104,7 @@ def load_eofs(filename=None):
     
     if filename == None:
         from davitpy import rcParams
-        path = "{:s}/model/".format(rcParams['SAM_DAVITPY_TABLES_PATH'])  #Modified by Xueling Mar. 9 2016
+        path = "{:s}/tables/model/".format(rcParams['DAVITPY_PATH'])  #Modified by Xueling Mar. 9 2016
         #path = os.environ['DAVITPY'] + '/tables/model/'
         filename = path + 'sam_eof_coeffs.dat'
 
