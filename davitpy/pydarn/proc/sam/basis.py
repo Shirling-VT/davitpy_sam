@@ -15,6 +15,7 @@
     * :class:`pydarn.proc.sam.basis.AMIEqset` : Container for set of AMIE basis functions
 
     written by Ellen D. P. Cousins, 2014-08
+    modifed by Xueling Shi 2016-3
 """
 
 import numpy as np
@@ -34,7 +35,9 @@ class AMIEqset():
         # From A. Richmond, NCAR-HAO
 
         if path == None:
-            path = os.environ['DAVITPY'] + '/tables/amie/'
+            from davitpy import rcParams
+	    path = "{:s}/davitpy/tables/amie/".format(rcParams['DAVITPY_PATH'])  #Modified by Xueling Mar. 9 2016
+            #path = os.environ['DAVITPY'] + '/tables/amie/'
 
         fname1 = path + 'qset16ascii24424bf_1.dat'
         fname2 = path + 'qset16ascii24424bf_2.dat'
@@ -100,7 +103,9 @@ def load_eofs(filename=None):
     """
     
     if filename == None:
-        path = os.environ['DAVITPY'] + '/tables/model/'
+        from davitpy import rcParams
+        path = "{:s}/davitpy/tables/model/".format(rcParams['DAVITPY_PATH'])  #Modified by Xueling Mar. 9 2016
+        #path = os.environ['DAVITPY'] + '/tables/model/'
         filename = path + 'sam_eof_coeffs.dat'
 
     if(not os.path.isfile(filename)):

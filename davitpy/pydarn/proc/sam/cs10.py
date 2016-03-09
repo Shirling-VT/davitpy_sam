@@ -11,6 +11,7 @@
     * :class:`pydarn.proc.sam.cs10.ModCoeff` : Container for set of stat. model coefficients
 
     written by Ellen D. P. Cousins, 2014-08
+    modifed by Xueling Shi 2016-3
 """
 
 import numpy as np
@@ -33,7 +34,9 @@ class ModCoeff():
 
     def load_cs10(self,path=None):
         if path == None:
-            path = os.environ['DAVITPY'] + '/tables/model/'
+            from davitpy import rcParams
+	    path = "{:s}/davitpy/tables/model/".format(rcParams['DAVITPY_PATH'])  #Modified by Xueling Mar. 9 2016
+            #path = os.environ['DAVITPY'] + '/tables/model/'
 
         self.model = 'CS10'
         self.order = 8
