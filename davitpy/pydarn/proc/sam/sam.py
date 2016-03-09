@@ -47,6 +47,7 @@ class SamConv():
     
     **Example**:
         ::
+	    from davitpy import pydarn
             import datetime as dt
             import numpy as np
             
