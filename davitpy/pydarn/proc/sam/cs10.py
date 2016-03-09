@@ -35,7 +35,7 @@ class ModCoeff():
     def load_cs10(self,path=None):
         if path == None:
             from davitpy import rcParams
-	    path = "{:s}/davitpy/tables/model/".format(rcParams['DAVITPY_PATH'])  #Modified by Xueling Mar. 9 2016
+	    path = "{:s}/model/".format(rcParams['SAM_DAVITPY_TABLES_PATH'])  #Modified by Xueling Mar. 9 2016
             #path = os.environ['DAVITPY'] + '/tables/model/'
 
         self.model = 'CS10'
