@@ -13,9 +13,9 @@ port -n select gcc mp-gcc49
 hash gfotran
 port -n install coreutils
 #easy_install pip
-sudo port install py${ver}-pip
-sudo port install pip_select
-sudo port select --set pip pip${ver}
+port install py${ver}-pip
+port install pip_select
+port select --set pip pip${ver}
 pip install --upgrade numpy
 pip install --upgrade matplotlib
 port -n install py${ver}-matplotlib-basemap
@@ -37,11 +37,11 @@ pip install netCDF4
 
 dir=$(pwd)
 cd /tmp
-git clone https://github.com/matplotlib/basemap.git
+git clone --branch v1.0.7rel https://github.com/matplotlib/basemap.git
 cd basemap/geos-3.3.3
 export GEOS_DIR=/usr/local/geos
 ./configure --prefix=$GEOS_DIR
 make
 make install
 cd ..
-python2.7 setup.py install
+python setup.py install
